@@ -64,7 +64,7 @@ while read first_line; do
     elif [ $current_signal -gt 30 ]; then QC=$YELLOW;
     else QC=$RED; fi
     printf "${SC}%-20s${NC} |  ${QC}%5s${NC}  |   ${CC}%2s${NC}  |\n" \
-        "$current_ssid" "$current_qual" "$current_channel"
+        "${current_ssid:0:19}" "$current_qual" "$current_channel"
 done
 printf -- "----------------------------------------\n"
 
