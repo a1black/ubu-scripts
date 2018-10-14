@@ -1,0 +1,8 @@
+# merge conflict
+*.orig
+*.rej
+# Vim
+*.swp
+.netrwhist
+tags
+TAGS
