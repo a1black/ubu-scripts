@@ -36,7 +36,7 @@ fi
 ! wget --version > /dev/null 2>&1 && show_error 'Wget is not available.'
 
 # Set defaults
-GITREPO='http://github.com/a1black/dotfiles.git'
+GITREPO='https://github.com/a1black/dotfiles.git'
 DESTINATION=~/.dotfiles
 
 # Process arguments
