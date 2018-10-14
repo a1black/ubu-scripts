@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Display Wi-Fi information.
 
-if [ $EUID -ne 0 ]; then
-    echo "Run script as root!"
-    exit 1
-elif ! iw --version > /dev/null 2>&1; then
+if ! iw --version > /dev/null 2>&1; then
     echo "\`iw\` is not installed."
     exit 1
 fi
+
+# Require root privilages.
+sudo -v
 
 # Global values.
 if [ $(tput colors 2> /dev/null) -ge 8 ]; then
@@ -87,3 +87,6 @@ while read stat_line; do
     fi
 done
 printf -- "-----------------\n"
+
+# Expire root privilages.
+sudo -k
